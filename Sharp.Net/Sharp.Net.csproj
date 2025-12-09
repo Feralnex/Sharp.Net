@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Sharp">
+      <HintPath>..\..\Sharp\Sharp\bin\Release\net8.0\Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Sharp.Collections">
+      <HintPath>..\..\Sharp.Collections\Sharp.Collections\bin\Release\net8.0\Sharp.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Sharp.Exceptions">
+      <HintPath>..\..\Sharp.Exceptions\Sharp.Exceptions\bin\Release\net8.0\Sharp.Exceptions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Localization\ExceptionMessages.pl.Designer.cs">
+      <DependentUpon>ExceptionMessages.pl.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Localization\ExceptionMessages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Localization\ExceptionMessages.pl.resx">
+      <LastGenOutput>ExceptionMessages.pl.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\ExceptionMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
